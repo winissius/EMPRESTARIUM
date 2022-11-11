@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p{
+    margin: auto;
+    text-align: justify;
+}
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+}
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: em;
+}
+body{
+    background:linear-gradient(to right, #355C7D, #6C5B7B, #2C5364);
+    width: 80%;
+    height: 90%;
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);
+    padding: 20px;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+/*.card1{
+
+    margin: auto;
+
+    background-color: #262626;
+
+    color: white;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    width:180px;
+
+    text-align: center;
+    
+    font-size: 1.2;
+}*/
+td{
+    text-align: left;
+}
+#buscaItens{
+    color: white;
+    display: flex;
+    width: 510px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);
+    background-color: rgba(128, 128, 128, 0.397);
+    border-radius: 10px;
+}
+footer{
+    text-align: left;
+}
+#login, #cadastroItens, .card1, .card2, #cadastro{
+    color: white;
+    display: flex;
+    width: 300px;
+    height: 250px;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    padding: 1px;
+    box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);
+    margin: 50px auto 50px auto;
+    background-color: rgba(128, 128, 128, 0.397);
+    border-radius: 10px;
+}
+#cadastro{
+    width: 500px;
+    height: 340px;
+}
+#cadastroItens{
+    width: 525px;
+    height: 220px;
+}
+.card1, .card2{
+    display: inline-flex;
+    width: 300px;
+    height: 120px;
+}
+.card2{
+    margin-left: 50px;
+}
+button{
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 115px;
+    text-align: center;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+input{
+    margin-top: 10px;
+
+    padding:0 5px;
+
+    background-color: transparent;
+
+    border:none;
+
+    border-bottom: 1px solid #e1e1e1;
+
+    outline: none;
+
+    color: white;
+}
+input::placeholder{
+    color: white;
+    font-style: italic;
+    opacity: 0.5;
+}
+a{
+    text-decoration: none;
+}
