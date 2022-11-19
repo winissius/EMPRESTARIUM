@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,12 +29,17 @@
                    
                   <p> 
                     <label for="email_cad">E-mail</label><br>
-                    <input id="email_cad" name="user_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" size="39"/> 
+                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" size="39"/> 
                   </p>
 
                   <p> 
-                    <label for="telefone_cad">Usuário</label><br>
-                    <input id="telefone_cad" name="email_cad" required="required" type="tel" placeholder="041987654321" size="39"/> 
+                    <label for="telefone_cad">Usuario</label><br>
+                    <input id="telefone_cad" name="user_cad" required="required" type="tel" placeholder="user00" size="39"/> 
+                  </p>
+
+                  <p> 
+                    <label for="telefone_cad">Telefone</label><br>
+                    <input id="telefone_cad" name="fone_cad" required="required" type="tel" placeholder="041987654321" size="39"/> 
                   </p>
                    
                   <p> 
@@ -54,6 +62,27 @@
                   </p>
                 </form>
             </div>
+            <?php
+              if(isset($_SESSION['finalizado_cadastro'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Cadastro realizado com sucesso</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['finalizado_cadastro']);
+            ?>
+
+            <?php
+              if(isset($_SESSION['user_existente'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Usuario já cadastrado</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['user_existente']);
+            ?>
     </main>
     <footer>
         <hr size="1" width="100%">

@@ -15,7 +15,7 @@
     <header name="arealogada">
         <h1>EMPRESTARIUM</h1>
         <h1><img align: src="images/logo-preto-200.jpg" alt="logo-preto-200"></h1>
-        <h2>Bem vindo, <?php echo $_SESSION['usuario']; ?></h2>
+        <h2>Bem vindo(a), <?php echo $_SESSION['usuario']; ?></h2>
         <hr size="1" width="100%">
    </header>
    <h2>Meus items emprestados</h2> 

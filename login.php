@@ -39,7 +39,7 @@
         <?php
             if(isset($_SESSION['invalido'])):
         ?>
-        <div id='login' style="height: 100px;">
+        <div id='login' style="height: 50px;">
                 <p>Usuário ou senha inválida</p>
         </div>
         <?php
