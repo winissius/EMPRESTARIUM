@@ -9,17 +9,21 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
+<?php
+    session_start();
+    ?>
+    <header name="arealogada">
         <h1>EMPRESTARIUM</h1>
         <h1><img align: src="images/logo-preto-200.jpg" alt="logo-preto-200"></h1>
+        <h2>Bem vindo, <?php echo $_SESSION['usuario']; ?></h2>
         <hr size="1" width="100%">
    </header>
-   <h2>Meus items emprestados</h2>
+   <h2>Meus items emprestados</h2> 
    <hr size="1" width="100%">
    <h2>Cadastrar novo item</h2>
    <hr size="1" width="100%">
     <div id="cadastroItens">
-        <form name="Cadastro de Items">
+        <form name="cadastroItems">
             <table>
                 <tr>
                     <td><label for="descricao">Descrição:</label></td>
@@ -73,7 +77,7 @@
    <h2>Emperstar um item</h2>
    <hr size="1" width="100%">
     <div id="buscaItens">
-        <form name="Busca de Items">
+        <form name="buscaItems">
             <table>
                 <tr>
                     <td><label for="tipo">Tipo:</label></td>
@@ -160,7 +164,7 @@
    <hr size="1" width="100%"> 
    <h2>Deslogar</h2>
    <hr size="1" width="100%"> 
-   <a href="login.html">Deslogar</a>
+   <a href="/emprestarium/login.php">Deslogar</a>
    <footer>
     <hr size="1" width="100%">
     <p>Fale com a gente</p>

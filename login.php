@@ -35,8 +35,8 @@
         </div>
     </main>
     <?php
-
-    
+    session_start();
+    ?>
     <footer>
         <hr size="1" width="100%">
         <p>Fale com a gente</p>

@@ -18,15 +18,15 @@
         <h2>Cadastro</h1> 
             <hr size="1" width="100%">
             <div id="cadastro">
-                <form method="post" action="cadastro.php" id="formLogin"> 
+                <form method="post" action="cadastroDados.php" id="formLogin"> 
                   <p> 
                     <label for="nome_cad">Nome completo</label><br>
                     <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" size="39"/>
                   </p>
                    
                   <p> 
-                    <label for="email_cad">Usuário</label><br>
-                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" size="39"/> 
+                    <label for="email_cad">E-mail</label><br>
+                    <input id="email_cad" name="user_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" size="39"/> 
                   </p>
 
                   <p> 
@@ -50,7 +50,7 @@
                    
                   <p class="link">  
                     Já tem conta?<br>
-                    <a href="login.html"> Ir para Login </a>
+                    <a href="/emprestarium/login.php"> Ir para Login </a>
                   </p>
                 </form>
             </div>
