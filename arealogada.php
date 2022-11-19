@@ -10,7 +10,8 @@
 </head>
 <body>
 <?php
-    session_start();
+    // session_start();
+    include('loginChecker.php');
     ?>
     <header name="arealogada">
         <h1>EMPRESTARIUM</h1>
