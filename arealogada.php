@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php
-    // session_start();
     include('loginChecker.php');
     ?>
     <header name="arealogada">
@@ -165,7 +164,7 @@
    <hr size="1" width="100%"> 
    <h2>Deslogar</h2>
    <hr size="1" width="100%"> 
-   <a href="/emprestarium/login.php">Deslogar</a>
+   <a href="logout.php">Deslogar</a>
    <footer>
     <hr size="1" width="100%">
     <p>Fale com a gente</p>

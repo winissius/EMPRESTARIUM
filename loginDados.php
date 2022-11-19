@@ -20,6 +20,7 @@ include('conexao.php');
             header('Location: arealogada.php');
             exit();
         }else{
+            $_SESSION['invalido'] = true;
             header('Location: login.php');
             exit();
         }

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,12 +34,19 @@
                         <tr><td><a href="homepage.html">Voltar</a></td></tr>
                     </tbody>
                 </table>
-            </form>
+            </form>         
         </div>
+        <?php
+            if(isset($_SESSION['invalido'])):
+        ?>
+        <div id='login' style="height: 100px;">
+                <p>Usuário ou senha inválida</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['invalido']); 
+        ?>  
     </main>
-    <?php
-    session_start();
-    ?>
     <footer>
         <hr size="1" width="100%">
         <p>Fale com a gente</p>

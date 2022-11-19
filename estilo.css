@@ -19,7 +19,8 @@ h2{
     font-size: em;
 }
 body{
-    background:linear-gradient(to right, #355C7D, #6C5B7B, #2C5364);
+    /* background:linear-gradient(to right, #355C7D, #6C5B7B, #2C5364); */
+    background-image: url("images/Adrien\ Olichon\ Unsplash.jpg");
     width: 80%;
     height: 90%;
     margin: 10px auto;
@@ -85,8 +86,9 @@ footer{
     box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);
     margin: 50px auto 50px auto;
     background-color: rgba(128, 128, 128, 0.397);
-    border-radius: 10px;
+    border-radius: 10px;    
 }
+
 #cadastro{
     width: 500px;
     height: 340px;
