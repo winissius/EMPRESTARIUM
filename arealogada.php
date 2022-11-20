@@ -133,32 +133,17 @@
             <td> ValorNome </td>
         </TR>
         <TR>
-            <td> Sobrenome </td>
-            <td> SobreNome </td>
+            <td> Email </td>
+            <td> Email </td>
         </TR>
         <tr>
             <td> Celular </td>
             <td> NumeroCelular </td>
         </tr>
         <tr>
-            <td>Rua</td>
-            <td>Rua</td>
-        </tr>
-        <tr>
-            <td>Número</td>
-            <td>numerocasa</td>
-        </tr>
-        <tr>
-            <td> Bairro </td>
-            <td> Bairro </td>
-        </tr>
-        <tr>
-            <td>Cidade</td>
-            <td>cidade</td>
-        </tr>
-        <tr>
-            <td>CEP</td>
-            <td>cep</td>
+            <td colspan="2">
+                <a href="alterarDados.php">Alterar dados</a>
+            </td>
         </tr>
        </table>
    <hr size="1" width="100%"> 

@@ -1,13 +1,19 @@
 <?php
-  session_start();
+    session_start();
+    include_once("conexao.php");
+    $user = $_SESSION['usuario'];
+    $query = "SELECT * FROM usuario WHERE usuario='$user'";
+    $resultado = mysqli_query($conexao, $query);
+    $row_usuario = mysqli_fetch_assoc($resultado);
 ?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Emprestarium</title>
+    <title>Alterar dados - Emprestarium</title>
     <link rel="stylesheet" href="estilo.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -16,44 +22,47 @@
         <h1>EMPRESTARIUM</h1>
         <h1><img align: src="images/logo-preto-200.jpg" alt="logo-preto-200"></h1>
         <hr size="1" width="100%">
+        <h2>Bem vindo(a), <?php echo $_SESSION['usuario']; ?></h2>
+        <hr size="1" width="100%">
    </header>
-    <main>
-        <h2>Cadastro</h1> 
+   <main>
+        <h2>Edição de dados</h1> 
             <hr size="1" width="100%">
             <div id="cadastro">
-                <form method="post" action="cadastroDados.php" id="formLogin"> 
+                <form method="post" action="alterarDadosDB.php" id="formLogin"> 
+                  <input type="hidden" name='id' value="<?php echo $row_usuario['usuarioID']?>">
                   <p> 
                     <label for="nome_cad">Nome completo</label><br>
-                    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" size="39"/>
+                    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" value="<?php echo $row_usuario['nome'] ?>" size="39"/>
                   </p>
                    
                   <p> 
                     <label for="email_cad">E-mail</label><br>
-                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" size="39"/> 
+                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com" value="<?php echo $row_usuario['email'] ?>"size="39"/> 
                   </p>
 
                   <p> 
                     <label for="telefone_cad">Usuario</label><br>
-                    <input id="telefone_cad" name="user_cad" required="required" type="tel" placeholder="user00" size="39"/> 
+                    <input id="telefone_cad" name="user_cad" required="required" type="tel" placeholder="user00" value="<?php echo $row_usuario['usuario'] ?>"size="39"/> 
                   </p>
 
                   <p> 
                     <label for="telefone_cad">Telefone</label><br>
-                    <input id="telefone_cad" name="fone_cad" required="required" type="tel" placeholder="041987654321" size="39"/> 
+                    <input id="telefone_cad" name="fone_cad" required="required" type="tel" placeholder="041987654321" value="<?php echo $row_usuario['telefone'] ?>"size="39"/> 
                   </p>
                    
                   <p> 
                     <label for="senha_cad">Senha</label><br>
-                    <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" size="39"/>
+                    <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" value="<?php echo $row_usuario['senha'] ?>" size="39"/>
                   </p>
 
                   <p> 
                     <label for="senha_cad2">Repita sua senha</label><br>
-                    <input id="senha_cad2" name="senha_cad2" required="required" type="password" placeholder="ex. 1234" size="39"/>
+                    <input id="senha_cad2" name="senha_cad2" required="required" type="password" placeholder="ex. 1234" value="<?php echo $row_usuario['senha'] ?>" size="39"/>
                   </p>
                    
                   <p> 
-                    <button type="submit" >Criar</button>
+                    <button type="submit" >Editar</button>
                   </p>
                    
                   <p class="link">  
@@ -63,25 +72,25 @@
                 </form>
             </div>
             <?php
-              if(isset($_SESSION['finalizado_cadastro'])):
+              if(isset($_SESSION['sucesso'])):
             ?>
             <div id="cadastro" style="height: 50px;">
-              <p>Cadastro realizado com sucesso</p>
+              <p>Sucesso em alterar os dados!<a href="/emprestarium/arealogada.php"> Ir para área logada</a></p>
             </div>
             <?php
               endif;
-              unset($_SESSION['finalizado_cadastro']);
+              unset($_SESSION['sucesso']);
             ?>
 
             <?php
-              if(isset($_SESSION['user_existente'])):
+              if(isset($_SESSION['falha'])):
             ?>
             <div id="cadastro" style="height: 50px;">
-              <p>Usuario já cadastrado</p>
+              <p>Falha no alterar os dados</p>
             </div>
             <?php
               endif;
-              unset($_SESSION['user_existente']);
+              unset($_SESSION['falha']);
             ?>
     </main>
     <footer>
