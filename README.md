@@ -3,10 +3,10 @@
 Projeto elaborado por @winissiusmachado - 01/10/2022
 
 ## Técnologias aplicadas:
--HTML5;
+- HTML5;
 
--CSS3;
+- CSS3;
 
--PHP;
+- PHP;
 
 - MySQL.
