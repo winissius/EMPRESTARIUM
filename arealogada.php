@@ -11,7 +11,12 @@
 <body>
 <?php
     include('loginChecker.php');
-    ?>
+    include_once("conexao.php");
+    $user = $_SESSION['usuario'];
+    $query = "SELECT * FROM usuario WHERE usuario='$user'";
+    $resultado = mysqli_query($conexao, $query);
+    $row_usuario = mysqli_fetch_assoc($resultado);
+?>
     <header name="arealogada">
         <h1>EMPRESTARIUM</h1>
         <h1><img align: src="images/logo-preto-200.jpg" alt="logo-preto-200"></h1>
@@ -57,13 +62,13 @@
                 <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>
                     <td>
-                        <input type="date" id="data-disponivel" name="Data de disponibiidade" placeholder="XX/XX/XX">
+                        <input type="date" id="data-disponivel" name="Disponibiidade" placeholder="XX/XX/XX">
                     </td>
                 </tr>
                 <tr>
                     <td><label for="data-retorno">Data de devolução</label></td>
                     <td>
-                        <input type="date" id="data-retorno" name="Data de devolução" placeholder="XX/XX/XX">
+                        <input type="date" id="data-retorno" name="Devolução" placeholder="XX/XX/XX">
                     </td>
                 </tr>
                 <tr>
@@ -122,30 +127,33 @@
             </table>
           </form>
     </div>
-   <hr size="1" width="100%">  
+   <hr size="1" width="100%"> 
    <h2>Meus dados</h2>
       <hr size="1" width="100%"> 
-       <table border="1" cellpadding="5" align="center">
-        <tr>
-            <th colspan="5">MEUS DADOS</th>
-        <TR>
-            <td> Nome </td>
-            <td> ValorNome </td>
-        </TR>
-        <TR>
-            <td> Email </td>
-            <td> Email </td>
-        </TR>
-        <tr>
-            <td> Celular </td>
-            <td> NumeroCelular </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="alterarDados.php">Alterar dados</a>
-            </td>
-        </tr>
-       </table>
+      <div id="buscaItens" style="height:100px">
+        <table>
+            <tr>
+                <td colspan='2'> Nome </td>
+                <td > <?php echo $row_usuario['nome'] ?> </td>
+            </TR>
+            <TR>
+                <td colspan='2'> Email </td>
+                <td> <?php echo $row_usuario['email'] ?> </td>
+            </TR>
+            <tr>
+                <td colspan='2'> Celular </td>
+                <td> <?php echo $row_usuario['telefone'] ?> </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="alterarDados.php">Alterar dados</a>
+                </td>
+            </tr>
+        </table>
+      </div> 
    <hr size="1" width="100%"> 
    <h2>Deslogar</h2>
    <hr size="1" width="100%"> 
