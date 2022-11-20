@@ -28,11 +28,11 @@
    <h2>Cadastrar novo item</h2>
    <hr size="1" width="100%">
     <div id="cadastroItens">
-        <form name="cadastroItems">
+        <form name="cadastroItems" action="cadastroItens.php" method="post">
             <table>
                 <tr>
                     <td><label for="descricao">Descrição:</label></td>
-                    <td><input type="text" id="descricao" name="Descrição" placeholder="Insira aqui a descrição do produto" size="50"></td>
+                    <td><input type="text" id="descricao" name="descricao" placeholder="Insira aqui a descrição do produto" size="50"></td>
                 </tr>
                 <tr>
                     <td><label for="tipo">Tipo:</label></td>
@@ -62,13 +62,13 @@
                 <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>
                     <td>
-                        <input type="date" id="data-disponivel" name="Disponibiidade" placeholder="XX/XX/XX">
+                        <input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX">
                     </td>
                 </tr>
                 <tr>
                     <td><label for="data-retorno">Data de devolução</label></td>
                     <td>
-                        <input type="date" id="data-retorno" name="Devolução" placeholder="XX/XX/XX">
+                        <input type="date" id="data-retorno" name="devolucao" placeholder="XX/XX/XX">
                     </td>
                 </tr>
                 <tr>
