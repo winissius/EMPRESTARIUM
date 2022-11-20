@@ -32,7 +32,7 @@
             <table>
                 <tr>
                     <td><label for="descricao">Descrição:</label></td>
-                    <td><input type="text" id="descricao" name="descricao" placeholder="Insira aqui a descrição do produto" size="50"></td>
+                    <td><input type="text" id="descricao" name="descricao" placeholder="Insira aqui a descrição do produto" size="30"></td>
                 </tr>
                 <tr>
                     <td><label for="tipo">Tipo:</label></td>
@@ -78,10 +78,31 @@
             </table>
             </form>
     </div>
+    <?php
+              if(isset($_SESSION['sucesso'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Cadastrado com sucesso!</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['sucesso']);
+            ?>
+
+            <?php
+              if(isset($_SESSION['falha'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Falha ao cadastrar!</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['falha']);
+    ?>
    <hr size="1" width="100%">  
    <h2>Emperstar um item</h2>
    <hr size="1" width="100%">
-    <div id="buscaItens">
+    <div id="buscaItens" style="height: auto;">
         <form name="buscaItems">
             <table>
                 <tr>
@@ -96,29 +117,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="quantidade">Quantidade</label></td>
-                    <td>
-                        <select name="quantidade" id="quantidade">
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
-                            <option value="8">08</option>
-                            <option value="9">09</option>
-                            <option value="10">10</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>   
                     <td><input type="date" id="data-disponivel" name="Data de disponibiidade" placeholder="XX/XX/XX"></td>     
-                </tr>
-                <tr>
-                    <td><label for="data-retorno">Data de devolução</label></td>
-                    <td><input type="date" id="data-retorno" name="Data de devolução" placeholder="XX/XX/XX"></td>
                 </tr>
                 <tr>
                     <td></td>
