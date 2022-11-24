@@ -144,5 +144,7 @@ input::placeholder{
     opacity: 0.5;
 }
 a{
-    text-decoration: none;
+    text-decoration: underline;
+    font-style: italic;
+    color: white;
 }

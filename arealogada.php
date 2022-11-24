@@ -34,7 +34,7 @@
             <table>
                 <tr>
                     <td><label for="descricao">Descrição:</label></td>
-                    <td><input type="text" id="descricao" name="descricao" placeholder="Insira aqui a descrição do produto" size="30"></td>
+                    <td><input type="text" id="descricao" name="descricao" placeholder="Insira aqui a descrição do produto" size="30" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td><label for="tipo">Tipo:</label></td>
@@ -64,13 +64,13 @@
                 <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>
                     <td>
-                        <input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX">
+                        <input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX" autocomplete="off" required>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="data-retorno">Data de devolução</label></td>
                     <td>
-                        <input type="date" id="data-retorno" name="devolucao" placeholder="XX/XX/XX">
+                        <input type="date" id="data-retorno" name="devolucao" placeholder="XX/XX/XX" autocomplete="off" required>
                     </td>
                 </tr>
                 <tr>
@@ -139,7 +139,6 @@
               endif;
               unset($_SESSION['sucesso']);
             ?>
-
             <?php
               if(isset($_SESSION['falha'])):
             ?>
