@@ -23,43 +23,13 @@
         <h2>Bem vindo(a), <?php echo $_SESSION['usuario']; ?></h2>
         <hr size="1" width="100%">
    </header>
-   <h2>Meus items emprestados</h2> 
-   <hr size="1" width="100%">
-        <?php
-            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador FROM itens WHERE dono='$user'";
-            $resultado = mysqli_query($conexao, $query);
-            $linhas = mysqli_fetch_assoc($resultado);
-            ?>
-            <div id='login' style="width: 1000px;">
-                <form action=""></form>
-                                <table border="1px">
-                                    <tr >
-                                        <td colspan="3">DESCRIÇÃO</td><td style="text-align: center;">TIPO</td><td colspan="3">QUANTIDADE</td><td colspan="3">DISPONIBILIDADE</td><td colspan="3">DEVOLUÇÃO</td><td>EMPRESTADOR</td>
-                                    </tr>
-            <?php
-            if((count($linhas))>0){
-                do {
-                    ?>
-                    <tr>
-                        <td colspan="3"><?=$linhas['descricao']?></td>
-                        <td style="text-align: center;"><?=$linhas['tipo']?></td>
-                        <td style="text-align: center;" colspan="3"><?=$linhas['quantidade']?></td>
-                        <td style="text-align: center;" colspan="3"><?=$linhas['disponibilidade']?></td>
-                        <td style="text-align: center;" colspan="3"><?=$linhas['devolucao']?></td>
-                        <td style="text-align: center;"><?=$linhas['tomador']?></td>
-                    </tr>
-                                
-                                  
-                    <?php
-                            }while($linhas = mysqli_fetch_assoc($resultado));
-                        }
-                    ?>
-                    </table>       
-            </div>
-   <hr size="1" width="100%">
+   <h2> Meus items disponíveis para emprestimo</h2> 
+    <?php
+        include("emprestimos.php")
+    ?>
    <h2>Cadastrar novo item</h2>
    <hr size="1" width="100%">
-    <div id="cadastroItens">
+    <div id="cadastroItens" style="height: auto;">
         <form name="cadastroItems" action="cadastroItens.php" method="post">
             <table>
                 <tr>
@@ -132,10 +102,10 @@
               unset($_SESSION['falha']);
     ?>
    <hr size="1" width="100%">  
-   <h2>Emperstar um item</h2>
+   <h2>Emprestar um item</h2>
    <hr size="1" width="100%">
     <div id="buscaItens" style="height: auto;">
-        <form name="buscaItems">
+        <form name="buscaItens" action="buscaItens.php" method="post">
             <table>
                 <tr>
                     <td><label for="tipo">Tipo:</label></td>
@@ -150,7 +120,7 @@
                 </tr>
                 <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>   
-                    <td><input type="date" id="data-disponivel" name="Data de disponibiidade" placeholder="XX/XX/XX"></td>     
+                    <td><input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX"></td>     
                 </tr>
                 <tr>
                     <td></td>
@@ -159,10 +129,31 @@
             </table>
           </form>
     </div>
+    <?php
+              if(isset($_SESSION['sucesso'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Cadastrado com sucesso!</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['sucesso']);
+            ?>
+
+            <?php
+              if(isset($_SESSION['falha'])):
+            ?>
+            <div id="cadastro" style="height: 50px;">
+              <p>Falha ao cadastrar!</p>
+            </div>
+            <?php
+              endif;
+              unset($_SESSION['falha']);
+    ?>
    <hr size="1" width="100%"> 
    <h2>Meus dados</h2>
       <hr size="1" width="100%"> 
-      <div id="buscaItens" style="height:100px">
+      <div id="buscaItens">
         <table>
             <tr>
                 <td colspan='2'> Nome </td>
