@@ -1,6 +1,6 @@
 <hr size="1" width="100%">
         <?php
-            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador FROM itens WHERE dono='$user'";
+            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador FROM itens WHERE dono='$user' order by devolucao asc";
             $resultado = mysqli_query($conexao, $query);
             $linhas = mysqli_fetch_assoc($resultado);
             if(isset($linhas)):

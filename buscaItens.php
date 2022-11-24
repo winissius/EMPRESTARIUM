@@ -5,15 +5,15 @@
             $user = $_SESSION['usuario'];
             $tipo = $_POST['tipo'];
             $data = $_POST['disponibilidade'];
+            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono, id FROM itens WHERE tomador IS NULL and dono != '$user' and tipo='$tipo' and disponibilidade > '$data'";
             if(isset($data)){
                 $data = date('y/m/d');
             }
-            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono FROM itens WHERE tomador IS NULL and dono != '$user' and tipo='$tipo' and disponibilidade > '$data'";
             $resultado = mysqli_query($conexao, $query);
             $linhas = mysqli_fetch_assoc($resultado);
             ?>
             <!DOCTYPE html>
-            <html lang="en">
+            <html lang="pt-br">
             <head>
             <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +53,11 @@
                         <td style="text-align: center;" colspan="3"><?=date("d-m-Y", strtotime($linhas['disponibilidade']))?></td>
                         <td style="text-align: center;" colspan="3"><?=date("d-m-Y", strtotime($linhas['devolucao']))?></td>
                         <td style="text-align: center;"><?=$linhas['dono']?></td>
-                        <td></td>
+                        <td><form action="fazerEmprestimo.php" method="post">
+                            <input type="hidden" name="user" value="<?=$_SESSION['usuario']?>">
+                            <input type="hidden" name="id" value ="<?=$linhas['id']?>">
+                            <input type="submit" value="Emprestar">
+                        </form></td>
                     </tr>                    
                     <?php
                             }while($linhas = mysqli_fetch_assoc($resultado));
