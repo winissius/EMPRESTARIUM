@@ -3,20 +3,18 @@ include('conexao.php');
 session_start();
 $id = $_POST['id'];
 $user = $_POST['user'];
-// $tipo = $_POST['tipo'];
-// $data = $_POST['disponibilidade'];
+
 
 echo $id;
 echo $user;
-$query = "UPDATE itens SET tomador='$user' WHERE id='$id'";
+$query = "UPDATE itens SET tomador=NULL WHERE id='$id'";
 $resultado = mysqli_query($conexao, $query);
 
 if(mysqli_affected_rows($conexao)){
-    $_SESSION['emprestimo'] = true;
+    $_SESSION['devolucao'] = true;
     header("Location: buscaItens.php");
 }
 
-header('Location: arealogada.php#buscaItens');
+header('Location: arealogada.php#devolucao');
 exit;
 ?>
-

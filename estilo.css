@@ -22,7 +22,7 @@ body{
     /* background:linear-gradient(to right, #355C7D, #6C5B7B, #2C5364); */
     background-image: url("images/daniel-leone-v7daTKlZzaw-unsplash.jpg");
     width: 80%;
-    height: 90%;
+    /*height: 90%;*/
     margin: 50px auto;
     text-align: center;
     box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);

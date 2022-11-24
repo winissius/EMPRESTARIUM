@@ -23,9 +23,9 @@
 
     if(mysqli_affected_rows($conexao)){
         $_SESSION['sucesso'] = true;
-        header("Location: arealogada.php");
+        header('Location: arealogada.php#cadastroItens');
     }else{
         $_SESSION['falha'] = true;
-        header("Location: arealogada.php");
+        header('Location: arealogada.php#cadastroItens');
     }
 ?>

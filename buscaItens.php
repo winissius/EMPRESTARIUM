@@ -5,7 +5,7 @@
             $user = $_SESSION['usuario'];
             $tipo = $_POST['tipo'];
             $data = $_POST['disponibilidade'];
-            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono, id FROM itens WHERE tomador IS NULL and dono != '$user' and tipo='$tipo' and disponibilidade > '$data'";
+            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono, id FROM itens WHERE tomador IS NULL and dono != '$user' and tipo='$tipo' and disponibilidade >= '$data'";
             if(isset($data)){
                 $data = date('y/m/d');
             }
@@ -66,6 +66,8 @@
                     ?>
                     </table>       
             </div>
+
+
     <hr size="1" width="100%"> 
    <h2>Deslogar</h2>
    <hr size="1" width="100%"> 

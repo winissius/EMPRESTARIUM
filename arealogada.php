@@ -23,9 +23,23 @@
         <h2>Bem vindo(a), <?php echo $_SESSION['usuario']; ?></h2>
         <hr size="1" width="100%">
    </header>
-   <h2> Meus items disponíveis para emprestimo</h2> 
+   <h2> Meus items disponíveis para emprestimo ou emprestados</h2> 
     <?php
         include("emprestimos.php")
+    ?>
+     <h2 id="devolucao"> Itens emprestados de outras pessoas</h2> 
+    <?php
+        include("emprestados.php")
+    ?>
+        <?php
+            if(isset($_SESSION['devolucao'])):
+          ?>
+          <div id="cadastro" style="height: 50px;" >
+            <p>Devolvido com sucesso!</p>
+          </div>
+          <?php
+            endif;
+            unset($_SESSION['devolucao']);
     ?>
    <h2>Cadastrar novo item</h2>
    <hr size="1" width="100%">
@@ -130,24 +144,14 @@
           </form>
     </div>
     <?php
-              if(isset($_SESSION['sucesso'])):
-            ?>
-            <div id="cadastro" style="height: 50px;">
-              <p>Cadastrado com sucesso!</p>
-            </div>
-            <?php
-              endif;
-              unset($_SESSION['sucesso']);
-            ?>
-            <?php
-              if(isset($_SESSION['falha'])):
-            ?>
-            <div id="cadastro" style="height: 50px;">
-              <p>Falha ao cadastrar!</p>
-            </div>
-            <?php
-              endif;
-              unset($_SESSION['falha']);
+            if(isset($_SESSION['emprestimo'])):
+          ?>
+          <div id="cadastro" style="height: 50px;" >
+            <p>Emprestado com sucesso!</p>
+          </div>
+          <?php
+            endif;
+            unset($_SESSION['emprestimo']);
     ?>
    <hr size="1" width="100%"> 
    <h2>Meus dados</h2>
