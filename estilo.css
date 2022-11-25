@@ -148,6 +148,20 @@ a{
     font-style: italic;
     color: white;
 }
+#atrasados{
+    color: white;
+    display: flex;
+    width: 320px;
+    height: auto;
+    align-items: center;
+    padding: 8px;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.459);
+    margin: 20px auto 20px auto;
+    background-color: rgb(187, 91, 91);
+    border-radius: 10px; 
+}
 
 
 

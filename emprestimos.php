@@ -5,7 +5,7 @@
             $linhas = mysqli_fetch_assoc($resultado);
             if(isset($linhas)):
             ?>
-            <div id='login' style="width: 850px;">
+            <div id='login' style="width: 60%;">
                 <form action=""></form>
                                 <table>
                                     <tr >

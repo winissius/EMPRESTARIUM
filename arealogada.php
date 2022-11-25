@@ -41,6 +41,9 @@
             endif;
             unset($_SESSION['devolucao']);
     ?>
+    <?php
+        include("atrasados.php")
+    ?>
    <h2>Cadastrar novo item</h2>
    <hr size="1" width="100%">
     <div id="cadastroItens" style="height: auto;">
@@ -134,7 +137,7 @@
                 </tr>
                 <tr>
                     <td><label for="data-disponivel">Data de disponibiidade</label></td>   
-                    <td><input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX"></td>     
+                    <td><input type="date" id="data-disponivel" name="disponibilidade" placeholder="XX/XX/XX" required></td>     
                 </tr>
                 <tr>
                     <td></td>
