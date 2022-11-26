@@ -25,7 +25,7 @@
                 <table >
                     <tbody>
                         <tr><td><label for="usuario">Usuário</label></td></tr>
-                        <tr><td><input type="text" id="usuario" autocomplete="off" size="39px" placeholder="contato@htmlecsspro.com" name="user"></td></tr>
+                        <tr><td><input type="text" id="usuario" autocomplete="off" size="39px" placeholder="UserXX" name="user"></td></tr>
                         <tr><td><label for="password">Senha</label></td></tr>
                         <tr><td><input type="password" id="password" autocomplete="off"size="39px" placeholder="ex. 1234" name="password"></td></tr>
                         <tr><td><button type="submit" >Logar</button></td></tr>
@@ -45,12 +45,23 @@
         <?php
         endif;
         unset($_SESSION['invalido']); 
+        ?>
+        <?php
+            if(isset($_SESSION['excluido'])):
+        ?>
+        <div id='login' style="height: 50px;">
+                <p>Usuário excluido com sucesso</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['excluido']); 
         ?>  
     </main>
     <footer>
         <hr size="1" width="100%">
         <p>Fale com a gente</p>
         <a href="mailto:winissius.m@gmail.com">Contato e-mail</a>
+        <p><br>Referência da imagem de fundo: © Daniel Leone / Unsplash</p>
    </footer>
 </body>
 </html>

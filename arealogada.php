@@ -23,10 +23,20 @@
         <h2>Bem vindo(a), <?php echo $_SESSION['usuario']; ?></h2>
         <hr size="1" width="100%">
    </header>
-   <h2> Meus items disponíveis para emprestimo ou emprestados</h2> 
+   <h2 id='emprestimos'> Meus items disponíveis para emprestimo ou emprestados</h2> 
     <?php
-        include("emprestimos.php")
-    ?>
+        include("emprestimos.php");
+
+        if(isset($_SESSION['itensExcluidos'])):
+        ?>
+        <div id='login' style="height: 50px;">
+                <p>Item excluido com sucesso</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['itensExcluidos']); 
+        ?>  
+    <hr size="1" width="100%">
      <h2 id="devolucao"> Itens emprestados de outras pessoas</h2> 
     <?php
         include("emprestados.php")
@@ -191,6 +201,7 @@
     <hr size="1" width="100%">
     <p>Fale com a gente</p>
     <a href="mailto:winissius.m@gmail.com">Contato e-mail</a>
+    <p><br>Referência da imagem de fundo: © Daniel Leone / Unsplash</p>
 </footer>
 </body>
 </html>

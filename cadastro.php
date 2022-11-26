@@ -88,6 +88,7 @@
         <hr size="1" width="100%">
         <p>Fale com a gente</p>
         <a href="mailto:winissius.m@gmail.com">Contato e-mail</a>
+        <p><br>Referência da imagem de fundo: © Daniel Leone / Unsplash</p>
    </footer>
 </body>
 </html>

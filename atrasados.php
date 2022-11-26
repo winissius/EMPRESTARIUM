@@ -1,11 +1,13 @@
 
 <?php
-    $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, dono, id FROM itens WHERE tomador='$user' and '2022-11-24' > devolucao order by devolucao asc";
+    $hoje = date("Y/m/d");
+    $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, dono, id FROM itens WHERE tomador='$user' and statusDevolucao='Emprestado' and '$hoje' > devolucao order by devolucao asc";
     $resultado = mysqli_query($conexao, $query);
     $linhas = mysqli_fetch_assoc($resultado);
     if(isset($linhas)):
     if((count($linhas))>0){
 ?>
+        <hr size="1" width="100%">
         <h3>Atrasados</h3>
         <hr size="1" width="100%">
         <div id='atrasados' style="width: 850px;">

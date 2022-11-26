@@ -8,7 +8,7 @@ $user = $_POST['user'];
 
 echo $id;
 echo $user;
-$query = "UPDATE itens SET tomador='$user' WHERE id='$id'";
+$query = "UPDATE itens SET tomador='$user', statusDevolucao='Emprestado' WHERE id='$id'";
 $resultado = mysqli_query($conexao, $query);
 
 if(mysqli_affected_rows($conexao)){

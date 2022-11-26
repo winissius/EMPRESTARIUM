@@ -71,6 +71,14 @@
                   </p>
                 </form>
             </div>
+            <div id="cadastro" style="height: 80px;">
+              <table><tr><td>Excluir conta</td></tr><tr></tr>
+              <td><form action="excluirUsuario.php" method="post">
+                            <input type="hidden" name="user" value="<?=$_SESSION['usuario']?>">
+                            <input type="hidden" name="id" value ="<?=$row_usuario['usuarioID']?>">
+                            <button type="submit" value="Excluir">Excluir</button>
+                    </form></td></table>
+            </div>
             <?php
               if(isset($_SESSION['sucesso'])):
             ?>
@@ -97,6 +105,7 @@
         <hr size="1" width="100%">
         <p>Fale com a gente</p>
         <a href="mailto:winissius.m@gmail.com">Contato e-mail</a>
+        <p><br>Referência da imagem de fundo: © Daniel Leone / Unsplash</p>
    </footer>
 </body>
 </html>

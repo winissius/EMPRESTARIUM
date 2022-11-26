@@ -17,7 +17,7 @@
     $dono = mysqli_real_escape_string($conexao, $usuario);
     $contatoDono = mysqli_real_escape_string($conexao, $telefone);
 
-    $query = "INSERT INTO itens (descricao, tipo, quantidade, disponibilidade, devolucao, dono, contatoDono) values ('$descricao', '$tipo', $quantidade, '$disponibiidade', '$devolucao', '$dono', '$contatoDono')";
+    $query = "INSERT INTO itens (descricao, tipo, quantidade, disponibilidade, devolucao, dono, contatoDono, statusDevolucao) values ('$descricao', '$tipo', $quantidade, '$disponibiidade', '$devolucao', '$dono', '$contatoDono', 'Disponível')";
 
     $resultado = mysqli_query($conexao, $query);
 

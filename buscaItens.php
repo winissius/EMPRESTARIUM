@@ -5,7 +5,7 @@
             $user = $_SESSION['usuario'];
             $tipo = $_POST['tipo'];
             $data = $_POST['disponibilidade'];
-            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono, id FROM itens WHERE tomador IS NULL and dono != '$user' and tipo='$tipo' and disponibilidade >= '$data'";
+            $query = "SELECT descricao, tipo, quantidade, disponibilidade, devolucao, tomador, dono, id FROM itens WHERE statusDevolucao = 'Disponível' and dono != '$user' and tipo='$tipo' and devolvido IS NULL and devolucao >= $data";
             if(isset($data)){
                 $data = date('y/m/d');
             }
@@ -80,6 +80,7 @@
     <hr size="1" width="100%">
     <p>Fale com a gente</p>
     <a href="mailto:winissius.m@gmail.com">Contato e-mail</a>
+    <p>Referência da imagem de fundo: © Daniel Leone / Unsplash</p>
 </footer>
 
    
