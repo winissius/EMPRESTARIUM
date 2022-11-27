@@ -29,9 +29,7 @@
                         <tr><td><label for="password">Senha</label></td></tr>
                         <tr><td><input type="password" id="password" autocomplete="off"size="39px" placeholder="ex. 1234" name="password"></td></tr>
                         <tr><td><button type="submit" >Logar</button></td></tr>
-                        <tr><td><a href="#">Esqueceu sua senha?</a></td></tr>
                         <tr><td><a href="/emprestarium/cadastro.php">Não tem conta? Se cadastre</a></td></tr>
-                        <tr><td><a href="homepage.html">Voltar</a></td></tr>
                     </tbody>
                 </table>
             </form>         

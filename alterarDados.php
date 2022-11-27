@@ -66,8 +66,7 @@
                   </p>
                    
                   <p class="link">  
-                    Já tem conta?<br>
-                    <a href="/emprestarium/login.php"> Ir para Login </a>
+                    <a href="/emprestarium/arealogada.php"> Voltar </a>
                   </p>
                 </form>
             </div>
